@@ -28,10 +28,13 @@ export default async function ServicePage({ params }: Props) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  // Strip the non-serializable `icon` before passing to the client component
+  const { icon, ...serializableService } = service!;
+
   return (
     <>
       <Navbar />
-      <ServicePageClient service={service} />
+      <ServicePageClient service={serializableService} />
       <Footer />
     </>
   );

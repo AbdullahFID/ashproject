@@ -10,6 +10,19 @@ import {
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────
+   ICON MAP — resolve icon names to components (client-safe)
+   ───────────────────────────────────────────────── */
+export const iconMap: Record<string, LucideIcon> = {
+  Building2,
+  HardHat,
+  Briefcase,
+  Factory,
+  ShoppingBag,
+  AlertTriangle,
+  Layers,
+};
+
+/* ─────────────────────────────────────────────────
    NAV LINKS
    ───────────────────────────────────────────────── */
 export const navLinks = [
@@ -27,6 +40,7 @@ export interface ServiceData {
   title: string;
   slug: string;
   icon: LucideIcon;
+  iconName: string;
   shortDescription: string;
   heroDescription: string;
   details: string[];
@@ -38,6 +52,7 @@ export const services: ServiceData[] = [
     title: "Multi-Residential Janitorial",
     slug: "multi-residential",
     icon: Building2,
+    iconName: "Building2",
     shortDescription:
       "Servicing 70+ residential condominiums throughout the GTA — from low-rise to luxury high-rise.",
     heroDescription:
@@ -57,6 +72,7 @@ export const services: ServiceData[] = [
     title: "Office & Commercial",
     slug: "office-commercial",
     icon: Briefcase,
+    iconName: "Briefcase",
     shortDescription:
       "From 6,000 sq ft offices to 250,000+ sq ft commercial spaces — 25+ years of trusted service.",
     heroDescription:
@@ -79,6 +95,7 @@ export const services: ServiceData[] = [
     title: "Superintendent Services",
     slug: "superintendents",
     icon: HardHat,
+    iconName: "HardHat",
     shortDescription:
       "Comprehensive superintendent services — daily operations, maintenance, compliance & beyond.",
     heroDescription:
@@ -97,6 +114,7 @@ export const services: ServiceData[] = [
     title: "Emergency Services",
     slug: "emergency-services",
     icon: AlertTriangle,
+    iconName: "AlertTriangle",
     shortDescription:
       "24/7 rapid-response emergency cleaning — floods, fire damage, odour control & carpet restoration.",
     heroDescription:
@@ -116,6 +134,7 @@ export const services: ServiceData[] = [
     title: "Full Service",
     slug: "full-service",
     icon: Layers,
+    iconName: "Layers",
     shortDescription:
       "End-to-end janitorial solutions — supplies, day porters, specialty services & exterior maintenance.",
     heroDescription:
@@ -140,6 +159,7 @@ export const services: ServiceData[] = [
     title: "Retail",
     slug: "retail",
     icon: ShoppingBag,
+    iconName: "ShoppingBag",
     shortDescription:
       "Stunning storefronts, always — flexible scheduling and trained retail cleaning specialists.",
     heroDescription:
@@ -159,6 +179,7 @@ export const services: ServiceData[] = [
     title: "Industrial",
     slug: "industrial",
     icon: Factory,
+    iconName: "Factory",
     shortDescription:
       "Heavy-duty industrial cleaning — machinery, high-level areas, waste management & pressure washing.",
     heroDescription:

@@ -4,14 +4,16 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 import type { ServiceData } from "@/lib/data";
-import { companyInfo } from "@/lib/data";
+import { companyInfo, iconMap } from "@/lib/data";
+
+type SerializableService = Omit<ServiceData, "icon">;
 
 export default function ServicePageClient({
   service,
 }: {
-  service: ServiceData;
+  service: SerializableService;
 }) {
-  const Icon = service.icon;
+  const Icon = iconMap[service.iconName];
 
   return (
     <main className="pt-24 pb-20">
